@@ -11,4 +11,4 @@ Feature:  Create bank account
 
     Then John account should be created and he should get a message as
       | message                                                         |
-      | Hello John, your account has been created successfully. Account number johnAHPS34FU|
+      | Hello John, your account has been created successfully.Account number JohnAHPS34FU|

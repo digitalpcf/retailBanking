@@ -17,6 +17,7 @@ import org.springframework.test.context.ContextConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 
+import static junit.framework.TestCase.assertTrue;
 import static org.assertj.core.api.Assertions.assertThat;
 
 @ContextConfiguration
@@ -27,7 +28,7 @@ public class OpenAccountStepDef {
     @Autowired
     UserAccountService userAccountService;
 
-    List<CreateAccountResponseDto> createdUserAccountList = new ArrayList<>();
+    List<CreateAccountResponseDto> actualCreatedUserAccountList = new ArrayList<>();
 
     @Given("^Jonn has provided the information as$")
     public void jonn_has_provided_the_information_as(List<UserAccountTestDto> userAccountList) throws Throwable {
@@ -37,18 +38,18 @@ public class OpenAccountStepDef {
 
             UserAccountDto userAccountDto = new UserAccountDto();
             BeanUtils.copyProperties(userAccountTest,userAccountDto);
-            createdUserAccountList.add(userAccountService.createUserAccount(userAccountDto));
+            actualCreatedUserAccountList.add(userAccountService.createUserAccount(userAccountDto));
         });
 
     }
 
     @Then("^John account should be created and he should get a message as$")
-    public void john_account_should_be_created_and_he_should_get_a_message_as(List<CreateAccountResponseDto> accountCreateResponseList) throws Throwable {
+    public void john_account_should_be_created_and_he_should_get_a_message_as(List<CreateAccountResponseDto> testAccountCreateResponseList) throws Throwable {
 
-        createdUserAccountList.forEach(createAccountResponseDto ->{
+        actualCreatedUserAccountList.forEach(createAccountResponseDto ->{
 
             int count = 0;
-            assertThat(StringUtils.endsWithIgnoreCase(createAccountResponseDto.getMessage(),accountCreateResponseList.get(count).getMessage()));
+            assertTrue(StringUtils.equals(createAccountResponseDto.getMessage(),testAccountCreateResponseList.get(count).getMessage()));
             count++;
 
         });

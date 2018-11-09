@@ -13,6 +13,6 @@ spring:
 
 user_bank:
   message:
-    success: Account has been created successfully.
+    success: your account has been created successfully.Account number
     fail: Account creation failed. Please contact your bank.
     hello: Hello

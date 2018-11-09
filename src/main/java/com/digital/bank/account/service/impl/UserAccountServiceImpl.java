@@ -5,6 +5,7 @@ import com.digital.bank.account.dto.CreateAccountResponseDto;
 import com.digital.bank.account.dto.UserAccountDto;
 import com.digital.bank.account.entity.SavingAccount;
 import com.digital.bank.account.service.UserAccountService;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -18,6 +19,7 @@ import java.util.stream.Collectors;
 public class UserAccountServiceImpl implements UserAccountService {
 
     public static final String STR = ",";
+    public static final String EMPTY_SPACE = " ";
 
     @Autowired
     SavingAccountDao savingAccountDao;
@@ -47,12 +49,17 @@ public class UserAccountServiceImpl implements UserAccountService {
             savingAccount = optionalSavingAccountSaved.get();
 
             createAccountResponseDto.setAccountNumber(savingAccount.getAccountNumber());
-            String message = new StringBuilder(hello).append(savingAccount.getFirstName()).append(STR).append(messageSuccess).toString();
+
+            String message = new StringBuilder(hello).append(EMPTY_SPACE).append(savingAccount.getFirstName()).append(STR)
+                    .append(EMPTY_SPACE).append(messageSuccess).append(EMPTY_SPACE)
+                    .append(savingAccount.getAccountNumber()).toString();
+
             createAccountResponseDto.setMessage(message);
 
         }else{
 
-            String message = new StringBuilder(hello).append(savingAccount.getFirstName()).append(STR).append(messageFail).toString();
+            String message = new StringBuilder(hello).append(savingAccount.getFirstName())
+                    .append(STR).append(messageFail).toString();
             createAccountResponseDto.setMessage(message);
 
         }
