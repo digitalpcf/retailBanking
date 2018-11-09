@@ -1,0 +1,22 @@
+server:
+  port: 8001
+
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/digi
+    username: root
+    password: root1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  application:
+    name: User_Bank_Account
+
+user_bank:
+  message:
+    success: Account has been created successfully.
+    fail: Account creation failed. Please contact your bank.
+    hello: Hello
+
+
