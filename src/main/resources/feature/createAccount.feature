@@ -37,6 +37,6 @@ Feature:  Create bank account
 
     Then John should get message as|
       | message                                                                              |
-      | Hello Ashok, your account has been created successfully.Account number AshokAHPS34FU |
+      | Hello Ashok, your account has been created successfully.Account number AshokAHPS34FL |
       | Hello Ravi, your account has been created successfully.Account number RaviAHPS34FM |
       | Hello Smita, Account balance is low, minimum deposit is 5000|

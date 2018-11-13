@@ -7,7 +7,7 @@ import com.digital.bank.account.pojo.UserAccountTestDto;
 import com.digital.bank.account.service.UserAccountService;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.apache.commons.lang3.StringUtils;
+import org.junit.Before;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,9 +17,8 @@ import org.springframework.test.context.ContextConfiguration;
 import java.util.ArrayList;
 import java.util.List;
 
-import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 
 @ContextConfiguration
@@ -29,8 +28,11 @@ public class OpenAccountStepDef {
 
     @Autowired
     UserAccountService userAccountService;
+    private List<CreateAccountResponseDto> actualCreatedUserAccountList = new ArrayList<>();
+    private int count = 0;
 
-    List<CreateAccountResponseDto> actualCreatedUserAccountList = new ArrayList<>();
+    @Before
+
 
     @Given("^Jonn has provided the information as$")
     public void jonn_has_provided_the_information_as(List<UserAccountTestDto> userAccountList) throws Throwable {
@@ -50,7 +52,6 @@ public class OpenAccountStepDef {
 
         actualCreatedUserAccountList.forEach(createAccountResponseDto -> {
 
-            int count = 0;
             assertThat(createAccountResponseDto.getMessage(), is(testAccountCreateResponseList.get(count).getMessage()));
             count++;
 
@@ -63,7 +64,6 @@ public class OpenAccountStepDef {
 
         actualCreatedUserAccountList.forEach(createAccountResponseDto -> {
 
-            int count = 0;
             UserAccountDto userAccountDtoActual = createAccountResponseDto.getUserAccountDto();
             UserAccountTestDto userAccountDtoExpected = testAccountList.get(count);
 
@@ -92,8 +92,6 @@ public class OpenAccountStepDef {
     public void john_should_get_message_as(List<CreateAccountResponseDto> testAccountCreateResponseList) throws Throwable {
 
         actualCreatedUserAccountList.forEach(createAccountResponseDto -> {
-
-            int count = 0;
             assertThat(createAccountResponseDto.getMessage(), is(testAccountCreateResponseList.get(count).getMessage()));
             count++;
 

@@ -27,7 +27,7 @@ public class UserAccountValidator {
 
     public CreateAccountResponseDto validateUserAccount (UserAccountDto userAccountDto, CreateAccountResponseDto createAccountResponseDto){
 
-        if(userAccountDto.getAmount() <= minBalance){
+        if(userAccountDto.getAmount() < minBalance){
 
             createAccountResponseDto.setMessage(new StringBuilder(hello).append(emptySpace)
                     .append(userAccountDto.getFirstName()).append(comma).append(emptySpace).append(messageFail).toString());
