@@ -12,7 +12,11 @@ spring:
     show-sql: true
 
 user_bank:
+  minumumBalance: 5000
   message:
     success: your account has been created successfully.Account number
     fail: Account creation failed. Please contact your bank.
+    lessAmount: Account balance is low, minimum deposit is 5000
     hello: Hello
+    str: ","
+    emptySpace: " "

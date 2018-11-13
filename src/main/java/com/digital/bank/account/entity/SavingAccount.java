@@ -13,12 +13,14 @@ public class SavingAccount {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String accountNumber;
-    String firstName;
-    String middleName;
-    String lastName;
-    String address;
-    String kycDocument;
-    String kycIdentificationNo;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String address;
+    private String kycDocument;
+    private String kycIdentificationNo;
+    private String currency;
+    private long amount;
 
     public long getId() {
         return id;
@@ -84,6 +86,23 @@ public class SavingAccount {
         this.kycIdentificationNo = kycIdentificationNo;
     }
 
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(long amount) {
+        this.amount = amount;
+    }
+
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -94,6 +113,7 @@ public class SavingAccount {
 
         return new EqualsBuilder()
                 .append(id, that.id)
+                .append(amount, that.amount)
                 .append(accountNumber, that.accountNumber)
                 .append(firstName, that.firstName)
                 .append(middleName, that.middleName)
@@ -101,6 +121,7 @@ public class SavingAccount {
                 .append(address, that.address)
                 .append(kycDocument, that.kycDocument)
                 .append(kycIdentificationNo, that.kycIdentificationNo)
+                .append(currency, that.currency)
                 .isEquals();
     }
 
@@ -115,6 +136,8 @@ public class SavingAccount {
                 .append(address)
                 .append(kycDocument)
                 .append(kycIdentificationNo)
+                .append(currency)
+                .append(amount)
                 .toHashCode();
     }
 }

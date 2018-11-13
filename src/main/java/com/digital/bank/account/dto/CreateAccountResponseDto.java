@@ -2,8 +2,8 @@ package com.digital.bank.account.dto;
 
 public class CreateAccountResponseDto {
 
-    String message;
-    String accountNumber;
+    private String message;
+    private UserAccountDto userAccountDto;
 
     public String getMessage() {
         return message;
@@ -13,11 +13,11 @@ public class CreateAccountResponseDto {
         this.message = message;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
+    public UserAccountDto getUserAccountDto() {
+        return userAccountDto;
     }
 
-    public void setAccountNumber(String accountNumber) {
-        this.accountNumber = accountNumber;
+    public void setUserAccountDto(UserAccountDto userAccountDto) {
+        this.userAccountDto = userAccountDto;
     }
 }

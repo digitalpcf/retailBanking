@@ -2,12 +2,23 @@ package com.digital.bank.account.pojo;
 
 public class UserAccountTestDto {
 
-    String firstName;
-    String middleName;
-    String lastName;
-    String address;
-    String kycDocument;
-    String kycIdentificationNo;
+    private String accountNumber;
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private String address;
+    private String kycDocument;
+    private String kycIdentificationNo;
+    private String currency;
+    private long amount;
+
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -56,4 +67,23 @@ public class UserAccountTestDto {
     public void setKycIdentificationNo(String kycIdentificationNo) {
         this.kycIdentificationNo = kycIdentificationNo;
     }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
+    }
+
+    public long getAmount() {
+        return amount;
+    }
+
+    public void setAmount(long amount) {
+        this.amount = amount;
+    }
+
+
+
 }
