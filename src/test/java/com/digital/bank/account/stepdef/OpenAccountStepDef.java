@@ -5,8 +5,6 @@ import com.digital.bank.account.dto.CreateAccountResponseDto;
 import com.digital.bank.account.dto.UserAccountDto;
 import com.digital.bank.account.pojo.UserAccountTestDto;
 import com.digital.bank.account.service.UserAccountService;
-import cucumber.api.DataTable;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.apache.commons.lang3.StringUtils;
@@ -20,6 +18,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static junit.framework.TestCase.assertTrue;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.*;
+
 
 @ContextConfiguration
 @SpringBootTest
@@ -50,7 +51,7 @@ public class OpenAccountStepDef {
         actualCreatedUserAccountList.forEach(createAccountResponseDto -> {
 
             int count = 0;
-            assertTrue(StringUtils.equals(createAccountResponseDto.getMessage(), testAccountCreateResponseList.get(count).getMessage()));
+            assertThat(createAccountResponseDto.getMessage(), is(testAccountCreateResponseList.get(count).getMessage()));
             count++;
 
         });
@@ -66,15 +67,15 @@ public class OpenAccountStepDef {
             UserAccountDto userAccountDtoActual = createAccountResponseDto.getUserAccountDto();
             UserAccountTestDto userAccountDtoExpected = testAccountList.get(count);
 
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getAccountNumber(), userAccountDtoExpected.getAccountNumber()));
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getAddress(), userAccountDtoExpected.getAddress()));
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getCurrency(), userAccountDtoExpected.getCurrency()));
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getFirstName(), userAccountDtoExpected.getFirstName()));
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getLastName(), userAccountDtoExpected.getLastName()));
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getMiddleName(), userAccountDtoExpected.getMiddleName()));
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getKycDocument(), userAccountDtoExpected.getKycDocument()));
-            assertTrue(StringUtils.equalsIgnoreCase(userAccountDtoActual.getKycIdentificationNo(), userAccountDtoExpected.getKycIdentificationNo()));
-            assertTrue(userAccountDtoActual.getAmount() == userAccountDtoExpected.getAmount());
+            assertThat(userAccountDtoActual.getAccountNumber(), is(userAccountDtoExpected.getAccountNumber()));
+            assertThat(userAccountDtoActual.getAddress(), is(userAccountDtoExpected.getAddress()));
+            assertThat(userAccountDtoActual.getCurrency(), is(userAccountDtoExpected.getCurrency()));
+            assertThat(userAccountDtoActual.getFirstName(), is(userAccountDtoExpected.getFirstName()));
+            assertThat(userAccountDtoActual.getLastName(), is(userAccountDtoExpected.getLastName()));
+            assertThat(userAccountDtoActual.getMiddleName(), is(userAccountDtoExpected.getMiddleName()));
+            assertThat(userAccountDtoActual.getKycDocument(), is(userAccountDtoExpected.getKycDocument()));
+            assertThat(userAccountDtoActual.getKycIdentificationNo(), is(userAccountDtoExpected.getKycIdentificationNo()));
+            assertThat(userAccountDtoActual.getAmount() , is(userAccountDtoExpected.getAmount()));
 
             userAccountDtoActual = null;
             userAccountDtoExpected = null;
@@ -93,7 +94,7 @@ public class OpenAccountStepDef {
         actualCreatedUserAccountList.forEach(createAccountResponseDto -> {
 
             int count = 0;
-            assertTrue(StringUtils.equals(createAccountResponseDto.getMessage(), testAccountCreateResponseList.get(count).getMessage()));
+            assertThat(createAccountResponseDto.getMessage(), is(testAccountCreateResponseList.get(count).getMessage()));
             count++;
 
         });
