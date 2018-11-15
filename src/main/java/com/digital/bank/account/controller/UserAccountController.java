@@ -24,8 +24,7 @@ public class UserAccountController {
     public ResponseEntity<CreateAccountResponseDto> createUserAccount(@RequestBody UserAccountDto userAccountDto){
 
         CreateAccountResponseDto createAccountResponseDto = userAccountService.createUserAccount(userAccountDto);
-        if(null != createAccountResponseDto.getUserAccountDto().getAccountNumber()){
-
+        if(null != createAccountResponseDto.getUserAccountDto()){
             return ResponseEntity.status(HttpStatus.OK).body(createAccountResponseDto);
         }else{
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(createAccountResponseDto);
