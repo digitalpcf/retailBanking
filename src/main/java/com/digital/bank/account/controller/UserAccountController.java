@@ -20,6 +20,13 @@ public class UserAccountController {
     @Autowired
     UserAccountService userAccountService;
 
+
+    @GetMapping("/welcome")
+    public String welcome(){
+
+        return "Welcome to ABC Bank";
+    }
+
     @PostMapping(path = "/createUserAccount")
     public ResponseEntity<CreateAccountResponseDto> createUserAccount(@RequestBody UserAccountDto userAccountDto){
 
