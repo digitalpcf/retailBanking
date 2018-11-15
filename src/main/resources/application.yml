@@ -13,10 +13,15 @@ spring:
   application:
     name: User_Bank_Account
 
+
 user_bank:
+  minumumBalance: 5000
   message:
-    success: Account has been created successfully. Account number
+    success: your account has been created successfully.Account number
     fail: Account creation failed. Please contact your bank.
+    lessAmount: Account balance is low, minimum deposit is 5000
     hello: Hello
+    str: ","
+    emptySpace: " "
 
 
