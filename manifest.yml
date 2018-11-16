@@ -7,5 +7,6 @@ applications:
   - route: onlineretailabc.apps.dev.pcf-aws.com
   services:
   - saving_acc_db_mysql
+  - abc_retail_bank_account_log
   stack: cflinuxfs2
   path: ./target/account-1.0.0.jar
