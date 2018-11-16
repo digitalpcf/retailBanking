@@ -1,5 +1,5 @@
 applications:
-- name: retailbanking
+- name: retailbanking_ci
   disk_quota: 1G
   instances: 1
   memory: 1G
