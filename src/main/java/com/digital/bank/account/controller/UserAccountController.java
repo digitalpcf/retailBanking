@@ -24,7 +24,7 @@ public class UserAccountController {
     @GetMapping("/welcome")
     public String welcome(){
 
-        return "Welcome to ABC Bank";
+        return "Welcome to ABC Bank - Retail Banking";
     }
 
     @PostMapping(path = "/createUserAccount")
