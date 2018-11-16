@@ -1,7 +1,5 @@
 applications:
 - name: retailbanking
-  buildpacks:
-  - https://github.com/cloudfoundry/java-buildpack.git
   disk_quota: 1G
   instances: 1
   memory: 1G
@@ -10,4 +8,4 @@ applications:
   services:
   - saving_acc_db_mysql
   stack: cflinuxfs2
-  path: ./account-1.0.0.jar
+  path: ./target/account-1.0.0.jar
