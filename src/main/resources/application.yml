@@ -14,6 +14,14 @@ spring:
     name: User_Bank_Account
 
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+      expose: "*"
+
+
 user_bank:
   minumumBalance: 5000
   message:
