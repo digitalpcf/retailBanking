@@ -3,13 +3,16 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/digitest
-    username: root
-    password: root1234
+    url: jdbc:h2:mem:digitest
+    username: sa
+    password:
   jpa:
     hibernate:
       ddl-auto: 'create-drop'
     show-sql: true
+  h2:
+    console:
+      enabled: true
 
 user_bank:
   minumumBalance: 5000

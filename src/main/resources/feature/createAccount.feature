@@ -23,7 +23,7 @@ Feature:  Create bank account
 
     Then Account will be created as|
       | First name | Middle Name | Last Name | Address | kyc Document | kyc Identification No | Amount | Currency | Account Number |
-      | Ashok      |             | Joseph    | EC City | PAN          | AHPS34FK              | 5000   | INR      | AshokAHPS34FK  |
+      | Ashok      |             | Joseph    | EC City | PAN          | AHPS34FK              | 5000   | INR      | AshokAHPS34FK |
 
 
   Scenario: Opening amount must be greater than or equal 5000

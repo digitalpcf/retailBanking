@@ -7,7 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.test.context.ActiveProfiles;
 
 @RunWith(Cucumber.class)
-@ActiveProfiles
+@ActiveProfiles("test")
 @CucumberOptions(features = "src/main/resources/feature", glue="com.digital.bank.account.stepdef")
 public class CucumberBankAccountTest {
 }
