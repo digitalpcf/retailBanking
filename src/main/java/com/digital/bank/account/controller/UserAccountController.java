@@ -21,12 +21,6 @@ public class UserAccountController {
     UserAccountService userAccountService;
 
 
-    @GetMapping("/welcome")
-    public String welcome(){
-
-        return "Welcome to ABC Bank - Retail Banking";
-    }
-
     @PostMapping(path = "/createUserAccount")
     public ResponseEntity<CreateAccountResponseDto> createUserAccount(@RequestBody UserAccountDto userAccountDto){
 
