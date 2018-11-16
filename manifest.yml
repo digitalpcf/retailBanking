@@ -4,7 +4,7 @@ applications:
   instances: 1
   memory: 1G
   routes:
-  - route: retailbanking.apps.dev.pcf-aws.com
+  - route: onlineretailabc.apps.dev.pcf-aws.com
   services:
   - saving_acc_db_mysql
   stack: cflinuxfs2
