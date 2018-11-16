@@ -35,7 +35,7 @@ Feature:  Create bank account
       | Ravi       |             | Joseph    | EC City | PAN          | AHPS34FM              | 6000   | INR      |
       | Smita      |             | Joseph    | EC City | PAN          | AHPS34FO              | 4500   | INR      |
 
-    Then John should get message as|
+    Then John should get message as |
       | message                                                                              |
       | Hello Ashok, your account has been created successfully.Account number AshokAHPS34FL |
       | Hello Ravi, your account has been created successfully.Account number RaviAHPS34FM |
