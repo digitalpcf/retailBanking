@@ -31,8 +31,6 @@ public class OpenAccountStepDef {
     private List<CreateAccountResponseDto> actualCreatedUserAccountList = new ArrayList<>();
     private int count = 0;
 
-    @Before
-
 
     @Given("^Jonn has provided the information as$")
     public void jonn_has_provided_the_information_as(List<UserAccountTestDto> userAccountList) throws Throwable {
