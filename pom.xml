@@ -25,6 +25,7 @@
         <apache.common.lang.version>3.0</apache.common.lang.version>
         <cucumber.version>1.2.5</cucumber.version>
         <junit-version>4.11</junit-version>
+        <swagger-version>2.9.2</swagger-version>
     </properties>
 
     <dependencies>
@@ -42,6 +43,21 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger-version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger-version}</version>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
