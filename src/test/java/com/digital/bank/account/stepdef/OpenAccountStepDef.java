@@ -7,7 +7,6 @@ import com.digital.bank.account.pojo.UserAccountTestDto;
 import com.digital.bank.account.service.UserAccountService;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.junit.Before;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
