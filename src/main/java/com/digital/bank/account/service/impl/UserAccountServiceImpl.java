@@ -2,6 +2,8 @@ package com.digital.bank.account.service.impl;
 
 import com.digital.bank.account.dao.SavingAccountDao;
 import com.digital.bank.account.dto.CreateAccountResponseDto;
+import com.digital.bank.account.dto.UserAccountDepositDto;
+import com.digital.bank.account.dto.UserAccountDepositResponseDto;
 import com.digital.bank.account.dto.UserAccountDto;
 import com.digital.bank.account.entity.SavingAccount;
 import com.digital.bank.account.service.UserAccountService;
@@ -105,5 +107,12 @@ public class UserAccountServiceImpl implements UserAccountService {
 
         return Optional.of(createAccountResponseDtoList);
 
+    }
+
+    @Override
+    public UserAccountDepositResponseDto depositAmount(UserAccountDepositDto userAccountDepositDto) {
+
+        savingAccountDao.updateAmount(userAccountDepositDto.getAmount());
+        return null;
     }
 }
