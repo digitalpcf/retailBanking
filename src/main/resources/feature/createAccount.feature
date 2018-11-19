@@ -1,6 +1,6 @@
 Feature:  Create bank account
 
-  Background: John as a front officer, provides information to the application to create new customer account in the ABC bank.
+  Background: John as a front officer,provides information to the application to create new customer account in the ABC bank.
 
   Scenario: Create account when all required information are provided
 
