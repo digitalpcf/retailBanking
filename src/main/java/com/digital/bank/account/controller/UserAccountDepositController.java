@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/retailbanking")
 public class UserAccountDepositController {
 
-    @PostMapping(path = "/userdeposit")
+    @PostMapping(path = "/deposit")
     public ResponseEntity<UserAccountDepositResponseDto> createUserAccount(@RequestBody UserAccountDepositDto userAccountDepositDto) {
 
         UserAccountDepositResponseDto userAccountDepositResponseDto = new UserAccountDepositResponseDto();
