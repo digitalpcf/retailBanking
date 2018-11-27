@@ -32,6 +32,7 @@ public class OpenAccountStepDef {
     private int count = 0;
 
 
+
     @Given("^Jonn has provided the information as$")
     public void jonn_has_provided_the_information_as(List<UserAccountTestDto> userAccountList) throws Throwable {
 
