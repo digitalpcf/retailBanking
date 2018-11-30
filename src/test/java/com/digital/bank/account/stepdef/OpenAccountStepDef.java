@@ -36,7 +36,6 @@ public class OpenAccountStepDef {
     @Given("^Jonn has provided the information as$")
     public void jonn_has_provided_the_information_as(List<UserAccountTestDto> userAccountList) throws Throwable {
 
-
         userAccountList.forEach(userAccountTest -> {
 
             UserAccountDto userAccountDto = new UserAccountDto();
