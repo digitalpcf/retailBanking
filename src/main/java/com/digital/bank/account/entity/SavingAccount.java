@@ -22,6 +22,7 @@ public class SavingAccount {
     private String currency;
     private long amount;
 
+
     public long getId() {
         return id;
     }
